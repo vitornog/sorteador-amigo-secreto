@@ -42,7 +42,7 @@ describe('Página de Sorteio',()=>{
                 <Sorteio />
             </RecoilRoot>)
 
-            const select = screen.getByPlaceholderText('Selecione o seu nomeu')
+            const select = screen.getByPlaceholderText('Selecione o seu nome')
 
             fireEvent.change(select,{
                 target: {
