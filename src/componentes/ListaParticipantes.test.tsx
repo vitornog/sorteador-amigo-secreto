@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import React from 'react'
 import { RecoilRoot } from 'recoil'
 import { useListaDeParticipantes } from '../state/hooks/UseListaDeParticipantes'
 import ListaParticipantes from './ListaParticipantes'
@@ -26,14 +25,17 @@ describe('Uma lista vazia de participantes',()=>{
         const itens = screen.queryAllByRole('listitem')
         expect(itens).toHaveLength(0)
     })
+})
 
-    test('Uma lista preenchida de participantes',() => {
-        const participantes = ['Ana','Catarina']
-        
-        beforeEach(()=>{
-            (useListaDeParticipantes as jest.Mock).mockReturnValue(participantes)
-        })
+describe('Uma lista preenchida de participantes',()=>{
+    
+    const participantes = ['Ana','Catarina']
 
+     beforeEach(()=>{
+        (useListaDeParticipantes as jest.Mock).mockReturnValue(participantes)
+    })
+
+    test('Deve possuir elementos',() => {        
         render(
             <RecoilRoot>
                 <ListaParticipantes />
