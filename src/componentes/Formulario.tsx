@@ -26,7 +26,7 @@ const Formulario = () => {
                     <input type="text" ref={inputRef} value={nome} onChange={evento => setNome(evento.target.value)} placeholder="Insira os nomes dos participantes" />
                     <button disabled={!nome}>Adicionar</button>
                 </div>
-                {mensagemDeErro && <p role='alert'>{mensagemDeErro}</p>}
+                {mensagemDeErro && <p className="alerta erro" role='alert'>{mensagemDeErro}</p>}
             </form>
             )
 }

@@ -2,6 +2,7 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useListaDeParticipantes } from "../state/hooks/useListaDeParticipantes"
 import { useSorteador } from "../state/hooks/useSorteador"
+import "./rodape.css"
 
 const Rodape = () =>{
 
@@ -17,8 +18,9 @@ const Rodape = () =>{
     }
 
     return (
-        <footer>
-            <button disabled={participantes.length<3} onClick={iniciar}>Iniciar sorteio</button>
+        <footer className="rodape-configuracoes">
+            <button className="botao" disabled={participantes.length<3} onClick={iniciar}>Iniciar sorteio</button>
+            <img src="/imagens/sacolas.png" alt="Sacolas de compras" />
         </footer>
     )
 }
